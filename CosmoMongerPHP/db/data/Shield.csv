@@ -1,0 +1,6 @@
+ShieldId,Name,Strength,BasePrice,CargoCost
+1,Force Field I,10,100,0
+2,Force Field II,15,4800,1
+3,Force Field III,20,11200,2
+4,Deflector I,25,16800,4
+5,Deflector II,30,25600,5

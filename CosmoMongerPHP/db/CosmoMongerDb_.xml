@@ -1,0 +1,735 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog/1.8" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog/1.8 http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-1.8.xsd">
+	<changeSet author="Jory Stone" id="1">
+		<comment>Converted from existing MSSQL database to MySQL database</comment>
+		<sql>SET storage_engine=InnoDB;</sql>
+        <createTable tableName="BaseShip">
+            <column autoIncrement="true" name="BaseShipId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_BaseShip"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BasePrice" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoSpace" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InitialJumpDriveId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InitialWeaponId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="InitialShieldId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HitFactor" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Level" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="BuddyList">
+            <column name="UserId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FriendId" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="Combat">
+            <column autoIncrement="true" name="CombatId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Combat"/>
+            </column>
+            <column name="AttackerShipId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DefenderShipId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Turn" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TurnPointsLeft" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Surrendered" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoJettisoned" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Status" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastActionTime" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CreditsLooted" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Search" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AttackerHits" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AttackerMisses" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DefenderHits" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DefenderMisses" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="CombatGood">
+            <column name="CombatId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GoodId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Quantity" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="QuantityPickedUp" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="Good">
+            <column autoIncrement="true" name="GoodId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Good"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BasePrice" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Contraband" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="100" name="TargetCount" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="IgnoreList">
+            <column name="UserId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="AntiFriendId" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="JumpDrive">
+            <column autoIncrement="true" name="JumpDriveId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_JumpDrive"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ChargeTime" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Range" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoCost" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BasePrice" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="Message">
+            <column autoIncrement="true" name="MessageId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Message"/>
+            </column>
+            <column name="RecipientUserId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SenderUserId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Content" type="TEXT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Time" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueBoolean="false" name="Received" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Subject" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VisibleToRecipient" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="VisibleToSender" type="bit">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="Npc">
+            <column autoIncrement="true" name="NpcId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Npc"/>
+            </column>
+            <column name="NType" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RaceId" type="int"/>
+            <column name="ShipId" type="int"/>
+            <column name="Aggression" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NextActionTime" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastVisitedSystemId" type="int"/>
+            <column name="LastAttackedShipId" type="int"/>
+            <column name="NextTravelTime" type="DATETIME"/>
+        </createTable>
+        <createTable tableName="NpcName">
+            <column autoIncrement="true" name="NpcNameId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_NpcName"/>
+            </column>
+            <column name="NType" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="Player">
+            <column autoIncrement="true" name="PlayerId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Player"/>
+            </column>
+            <column name="UserId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RaceId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ShipId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BankCredits" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TimePlayed" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastPlayed" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="NetWorth" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="ShipsDestroyed" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="ForcedSurrenders" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="ForcedFlees" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="CargoLootedWorth" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="ShipsLost" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="SurrenderCount" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="FleeCount" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0" name="CargoLostWorth" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueBoolean="true" name="Alive" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastRecordSnapshotAge" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DistanceTraveled" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GoodsTraded" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="PlayerRecord">
+            <column autoIncrement="true" name="PlayerRecordId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_PlayerRecord"/>
+            </column>
+            <column name="PlayerId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RecordTime" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TimePlayed" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="NetWorth" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ShipsDestroyed" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ForcedSurrenders" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ForcedFlees" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoLootedWorth" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ShipsLost" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SurrenderCount" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="FleeCount" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoLostWorth" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DistanceTraveled" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GoodsTraded" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="Race">
+            <column autoIncrement="true" name="RaceId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Race"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Weapons" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Shields" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Engine" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Accuracy" type="int"/>
+            <column name="RacialEnemyId" type="int"/>
+            <column name="RacialPreferenceId" type="int"/>
+            <column name="Description" type="varchar(1000)"/>
+            <column name="HomeSystemId" type="int"/>
+        </createTable>
+        <createTable tableName="Shield">
+            <column autoIncrement="true" name="ShieldId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Shield"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Strength" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BasePrice" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoCost" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="Ship">
+            <column autoIncrement="true" name="ShipId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Ship"/>
+            </column>
+            <column name="BaseShipId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SystemId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WeaponId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JumpDriveId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ShieldId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DamageEngine" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DamageWeapon" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DamageShield" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="DamageHull" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TargetSystemId" type="int"/>
+            <column name="CurrentJumpDriveCharge" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TargetSystemArrivalTime" type="DATETIME"/>
+            <column name="Credits" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="ShipGood">
+            <column name="ShipId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GoodId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Quantity" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="System">
+            <column autoIncrement="true" name="SystemId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_System"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PositionX" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PositionY" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="HasBank" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="RaceId" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="SystemGood">
+            <column name="SystemId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="GoodId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Quantity" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PriceMultiplier" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0.0" name="ProductionFactor" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueNumeric="0.0" name="ConsumptionFactor" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Demand" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="SystemJumpDriveUpgrade">
+            <column name="SystemId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="JumpDriveId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Quantity" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PriceMultiplier" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="SystemShieldUpgrade">
+            <column name="SystemId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="ShieldId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Quantity" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PriceMultiplier" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="SystemShip">
+            <column name="SystemId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BaseShipId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Quantity" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PriceMultiplier" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="SystemWeaponUpgrade">
+            <column name="SystemId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="WeaponId" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Quantity" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="PriceMultiplier" type="float(53,0)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+        <createTable tableName="User">
+            <column autoIncrement="true" name="UserId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_User"/>
+            </column>
+            <column name="Email" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="UserName" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueBoolean="false" name="Validated" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueBoolean="true" name="Active" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column defaultValueBoolean="false" name="Admin" type="bit">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Password" type="varchar(160)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastLogin" type="DATETIME"/>
+            <column defaultValueNumeric="0" name="LoginAttemptCount" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="LastActivity" type="DATETIME"/>
+            <column name="LastVerificationSent" type="DATETIME"/>
+            <column name="Joined" type="DATETIME">
+                <constraints nullable="false"/>
+            </column>
+            <column name="SessionID" type="varchar(255)"/>
+            <column name="PasswordResetCode" type="varchar(128)"/>
+            <column name="PasswordResetExpiration" type="DATETIME"/>
+        </createTable>
+        <createTable tableName="Weapon">
+            <column autoIncrement="true" name="WeaponId" type="int">
+                <constraints nullable="false" primaryKey="true" primaryKeyName="PK_Weapon"/>
+            </column>
+            <column name="Name" type="varchar(255)">
+                <constraints nullable="false"/>
+            </column>
+            <column name="Power" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="TurnCost" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="CargoCost" type="int">
+                <constraints nullable="false"/>
+            </column>
+            <column name="BasePrice" type="int">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+	</changeSet>
+  <changeSet author="Jory Stone" id="2">
+	<comment>Loading Basic Data</comment>
+    <loadData tableName="NpcName" file="data/NpcName.csv">
+		<column header="NpcNameId" type="NUMERIC"/>
+		<column header="NType" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+    </loadData>
+    <loadData tableName="System" file="data/System.csv">
+		<column header="SystemId" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+		<column header="PositionX" type="NUMERIC"/>
+		<column header="PositionY" type="NUMERIC"/>
+		<column header="HasBank" type="NUMERIC"/>
+		<column header="RaceId" type="NUMERIC"/>
+    </loadData>
+    <loadData tableName="Good" file="data/Good.csv">
+		<column header="GoodId" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+		<column header="BasePrice" type="NUMERIC"/>
+		<column header="Contraband" type="NUMERIC"/>
+		<column header="TargetCount" type="NUMERIC"/>
+    </loadData>
+    <loadData tableName="SystemGood" file="data/SystemGood.csv">
+		<column header="SystemId" type="NUMERIC"/>
+        <column header="GoodId" type="NUMERIC"/>
+		<column header="Quantity" type="NUMERIC"/>
+		<column header="PriceMultiplier" type="NUMERIC"/>
+		<column header="ProductionFactor" type="NUMERIC"/>
+		<column header="ConsumptionFactor" type="NUMERIC"/>
+		<column header="Demand" type="NUMERIC"/>
+    </loadData>
+    <loadData tableName="JumpDrive" file="data/JumpDrive.csv">
+		<column header="JumpDriveId" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+		<column header="ChargeTime" type="NUMERIC"/>
+		<column header="CargoSpace" type="NUMERIC"/>
+		<column header="Range" type="NUMERIC"/>
+		<column header="BasePrice" type="NUMERIC"/>
+    </loadData>
+    <loadData tableName="Shield" file="data/Shield.csv">
+		<column header="ShieldId" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+		<column header="Strength" type="NUMERIC"/>
+		<column header="CargoSpace" type="NUMERIC"/>
+		<column header="BasePrice" type="NUMERIC"/>
+    </loadData>
+    <loadData tableName="Weapon" file="data/Weapon.csv">
+		<column header="WeaponId" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+		<column header="Power" type="NUMERIC"/>
+		<column header="TurnCost" type="NUMERIC"/>
+		<column header="CargoSpace" type="NUMERIC"/>
+		<column header="BasePrice" type="NUMERIC"/>
+    </loadData>
+    <loadData tableName="Race" file="data/Race.csv">
+		<column header="RaceId" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+		<column header="Weapons" type="NUMERIC"/>
+		<column header="Shields" type="NUMERIC"/>
+		<column header="Engine" type="NUMERIC"/>
+		<column header="Accuracy" type="NUMERIC"/>
+		<column header="RacialEnemyId" type="NUMERIC"/>
+		<column header="RacialPreferenceId" type="NUMERIC"/>
+		<column header="Description" type="STRING"/>
+		<column header="HomeSystemId" type="NUMERIC"/>
+    </loadData>
+    <loadData tableName="BaseShip" file="data/BaseShip.csv">
+		<column header="BaseShipId" type="NUMERIC"/>
+        <column header="Name" type="STRING"/>
+		<column header="BasePrice" type="NUMERIC"/>
+		<column header="CargoSpace" type="NUMERIC"/>
+		<column header="InitialJumpDriveId" type="NUMERIC"/>
+		<column header="InitialWeaponId" type="NUMERIC"/>
+		<column header="InitialShieldId" type="NUMERIC"/>
+		<column header="HitFactor" type="NUMERIC"/>
+		<column header="Level" type="NUMERIC"/>
+    </loadData>
+	<sql>
+		INSERT INTO SystemJumpDriveUpgrade (SystemId, JumpDriveId, Quantity, PriceMultiplier)
+		SELECT SystemId, JumpDriveId, 1000, 1.0 FROM System, JumpDrive;
+		INSERT INTO SystemShieldUpgrade (SystemId, ShieldId, Quantity, PriceMultiplier)
+		SELECT SystemId, ShieldId, 1000, 1.0 FROM System, Shield;
+		INSERT INTO SystemWeaponUpgrade (SystemId, WeaponId, Quantity, PriceMultiplier)
+		SELECT SystemId, WeaponId, 1000, 1.0 FROM System, Weapon;
+	</sql>
+  </changeSet>
+  <changeSet author="Jory Stone" id="3">
+	<comment>Adding indexes, primary keys, and foreign keys</comment>
+        <addPrimaryKey columnNames="UserId, FriendId" constraintName="PK_BuddyList" tableName="BuddyList"/>
+        <addPrimaryKey columnNames="CombatId, GoodId" constraintName="PK_CombatGood" tableName="CombatGood"/>
+        <addPrimaryKey columnNames="UserId, AntiFriendId" constraintName="PK_IgnoreList" tableName="IgnoreList"/>
+        <addPrimaryKey columnNames="GoodId, ShipId" constraintName="PK_ShipGood" tableName="ShipGood"/>
+        <addPrimaryKey columnNames="GoodId, SystemId" constraintName="PK_SystemGood" tableName="SystemGood"/>
+        <addPrimaryKey columnNames="JumpDriveId, SystemId" constraintName="PK_SystemJumpDriveUpgrade" tableName="SystemJumpDriveUpgrade"/>
+        <addPrimaryKey columnNames="ShieldId, SystemId" constraintName="PK_SystemShieldUpgrade" tableName="SystemShieldUpgrade"/>
+        <addPrimaryKey columnNames="BaseShipId, SystemId" constraintName="PK_SystemShip" tableName="SystemShip"/>
+        <addPrimaryKey columnNames="WeaponId, SystemId" constraintName="PK_SystemWeaponUpgrade" tableName="SystemWeaponUpgrade"/>
+        <createIndex indexName="UQ_BaseShip_Name" tableName="BaseShip" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <createIndex indexName="UQ_Good_Name" tableName="Good" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <createIndex indexName="UQ_JumpDrive_Name" tableName="JumpDrive" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <createIndex indexName="UQ_Npc_Name" tableName="Npc" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <createIndex indexName="UQ_Race_Name" tableName="Race" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <createIndex indexName="UQ_Shield_Name" tableName="Shield" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <createIndex indexName="UQ_System_Name" tableName="System" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <createIndex indexName="UQ_User_Email" tableName="User" unique="true">
+            <column name="Email"/>
+        </createIndex>
+        <createIndex indexName="UQ_User_UserName" tableName="User" unique="true">
+            <column name="UserName"/>
+        </createIndex>
+        <createIndex indexName="UQ_Weapon_Name" tableName="Weapon" unique="true">
+            <column name="Name"/>
+        </createIndex>
+        <addForeignKeyConstraint baseColumnNames="InitialJumpDriveId" baseTableName="BaseShip" constraintName="FK_JumpDrive_BaseShip" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="JumpDriveId" referencedTableName="JumpDrive"/>
+        <addForeignKeyConstraint baseColumnNames="InitialShieldId" baseTableName="BaseShip" constraintName="FK_Shield_BaseShip" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ShieldId" referencedTableName="Shield"/>
+        <addForeignKeyConstraint baseColumnNames="InitialWeaponId" baseTableName="BaseShip" constraintName="FK_Weapon_BaseShip" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="WeaponId" referencedTableName="Weapon"/>
+        <addForeignKeyConstraint baseColumnNames="FriendId" baseTableName="BuddyList" constraintName="FK_User_BuddyList_2" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="UserId" referencedTableName="User"/>
+        <addForeignKeyConstraint baseColumnNames="AttackerShipId" baseTableName="Combat" constraintName="FK_Ship_Combat_AttackerShipId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ShipId" referencedTableName="Ship"/>
+        <addForeignKeyConstraint baseColumnNames="DefenderShipId" baseTableName="Combat" constraintName="FK_Ship_Combat_DefenderShipId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ShipId" referencedTableName="Ship"/>
+        <addForeignKeyConstraint baseColumnNames="CombatId" baseTableName="CombatGood" constraintName="FK_Combat_CombatGood_CombatId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="CombatId" referencedTableName="Combat"/>
+        <addForeignKeyConstraint baseColumnNames="GoodId" baseTableName="CombatGood" constraintName="FK_Good_CombatGood_GoodId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="GoodId" referencedTableName="Good"/>
+        <addForeignKeyConstraint baseColumnNames="AntiFriendId" baseTableName="IgnoreList" constraintName="FK_User_IgnoreList_2" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="UserId" referencedTableName="User"/>
+        <addForeignKeyConstraint baseColumnNames="RecipientUserId" baseTableName="Message" constraintName="FK_User_Message_2" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="UserId" referencedTableName="User"/>
+        <addForeignKeyConstraint baseColumnNames="LastAttackedShipId" baseTableName="Npc" constraintName="FK_Ship_Npc_LastShipAttackedId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ShipId" referencedTableName="Ship"/>
+        <addForeignKeyConstraint baseColumnNames="LastVisitedSystemId" baseTableName="Npc" constraintName="FK_System_Npc_LastVisitedSystemId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="RaceId" baseTableName="Npc" constraintName="FK_Race_Npc" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="RaceId" referencedTableName="Race"/>
+        <addForeignKeyConstraint baseColumnNames="ShipId" baseTableName="Npc" constraintName="FK_Ship_Npc" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ShipId" referencedTableName="Ship"/>
+        <addForeignKeyConstraint baseColumnNames="RaceId" baseTableName="Player" constraintName="FK_Race_Player" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="RaceId" referencedTableName="Race"/>
+        <addForeignKeyConstraint baseColumnNames="ShipId" baseTableName="Player" constraintName="FK_Ship_Player" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="ShipId" referencedTableName="Ship"/>
+        <addForeignKeyConstraint baseColumnNames="UserId" baseTableName="Player" constraintName="FK_User_Player" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="UserId" referencedTableName="User"/>
+        <addForeignKeyConstraint baseColumnNames="PlayerId" baseTableName="PlayerRecord" constraintName="FK_Player_PlayerRecord_PlayerId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="PlayerId" referencedTableName="Player"/>
+        <addForeignKeyConstraint baseColumnNames="HomeSystemId" baseTableName="Race" constraintName="FK_System_Race_HomeSystemId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="RaceId" baseTableName="Race" constraintName="FK_RaceId_Race" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="RaceId" referencedTableName="Race"/>
+        <addForeignKeyConstraint baseColumnNames="RacialEnemyId" baseTableName="Race" constraintName="FK_Race_Race_RacialEnemyId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="RaceId" referencedTableName="Race"/>
+        <addForeignKeyConstraint baseColumnNames="RacialPreferenceId" baseTableName="Race" constraintName="FK_Race_Race_RacialPreferenceId" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="RaceId" referencedTableName="Race"/>
+        <addForeignKeyConstraint baseColumnNames="BaseShipId" baseTableName="Ship" constraintName="FK_BaseShip_Ship" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="BaseShipId" referencedTableName="BaseShip"/>
+        <addForeignKeyConstraint baseColumnNames="JumpDriveId" baseTableName="Ship" constraintName="FK_JumpDrive_Ship" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="JumpDriveId" referencedTableName="JumpDrive"/>
+        <addForeignKeyConstraint baseColumnNames="ShieldId" baseTableName="Ship" constraintName="FK_Shield_Ship" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ShieldId" referencedTableName="Shield"/>
+        <addForeignKeyConstraint baseColumnNames="SystemId" baseTableName="Ship" constraintName="FK_System_Ship" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="WeaponId" baseTableName="Ship" constraintName="FK_Weapon_Ship" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="WeaponId" referencedTableName="Weapon"/>
+        <addForeignKeyConstraint baseColumnNames="GoodId" baseTableName="ShipGood" constraintName="FK_Good_ShipGood" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="GoodId" referencedTableName="Good"/>
+        <addForeignKeyConstraint baseColumnNames="ShipId" baseTableName="ShipGood" constraintName="FK_Ship_ShipGood" deferrable="false" initiallyDeferred="false" onDelete="CASCADE" onUpdate="RESTRICT" referencedColumnNames="ShipId" referencedTableName="Ship"/>
+        <addForeignKeyConstraint baseColumnNames="GoodId" baseTableName="SystemGood" constraintName="FK_Good_SystemGood" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="GoodId" referencedTableName="Good"/>
+        <addForeignKeyConstraint baseColumnNames="SystemId" baseTableName="SystemGood" constraintName="FK_System_SystemGood" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="JumpDriveId" baseTableName="SystemJumpDriveUpgrade" constraintName="FK_JumpDrive_SystemJumpDriveUpgrade" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="JumpDriveId" referencedTableName="JumpDrive"/>
+        <addForeignKeyConstraint baseColumnNames="SystemId" baseTableName="SystemJumpDriveUpgrade" constraintName="FK_System_SystemJumpDriveUpgrade" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="ShieldId" baseTableName="SystemShieldUpgrade" constraintName="FK_Shield_SystemShieldUpgrade" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="ShieldId" referencedTableName="Shield"/>
+        <addForeignKeyConstraint baseColumnNames="SystemId" baseTableName="SystemShieldUpgrade" constraintName="FK_System_SystemShieldUpgrade" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="BaseShipId" baseTableName="SystemShip" constraintName="FK_BaseShip_SystemShip" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="BaseShipId" referencedTableName="BaseShip"/>
+        <addForeignKeyConstraint baseColumnNames="SystemId" baseTableName="SystemShip" constraintName="FK_System_SystemShip" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="SystemId" baseTableName="SystemWeaponUpgrade" constraintName="FK_System_SystemWeaponUpgrade" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="SystemId" referencedTableName="System"/>
+        <addForeignKeyConstraint baseColumnNames="WeaponId" baseTableName="SystemWeaponUpgrade" constraintName="FK_Weapon_SystemWeaponUpgrade" deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT" referencedColumnNames="WeaponId" referencedTableName="Weapon"/>
+  </changeSet>
+</databaseChangeLog>

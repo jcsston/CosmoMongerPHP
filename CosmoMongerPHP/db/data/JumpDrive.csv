@@ -1,0 +1,6 @@
+"JumpDriveId","Name","ChargeTime","Range","CargoCost","BasePrice"
+1,"Fuel Cell",12,10,0,100
+2,"Fission",6,10,2,4800
+3,"Fusion",8,15,3,7200
+4,"Anti-Matter",10,20,4,13600
+5,"Singularity",7,20,5,19200
