@@ -1,0 +1,16 @@
+<?php
+
+class ArgumentException extends CosmoMongerException
+{
+	private $paramName;
+	
+    public function __construct($message, $paramName) {
+        parent::__construct("$message. Argument: $paramName");
+		$this->paramName = $paramName;
+    }
+	
+	public function getParamName()
+	{
+		return $this->paramName;
+	}
+}

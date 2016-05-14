@@ -1,0 +1,95 @@
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/cosmomonger/!svn/ver/383/branches/CosmoMongerPHP/protected/views/account
+END
+ChangeEmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/ChangeEmail.php
+END
+ResetPasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cosmomonger/!svn/ver/382/branches/CosmoMongerPHP/protected/views/account/ResetPasswordSuccess.php
+END
+UserProfile.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/UserProfile.php
+END
+ChangePasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cosmomonger/!svn/ver/380/branches/CosmoMongerPHP/protected/views/account/ChangePasswordSuccess.php
+END
+ResetPassword.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/cosmomonger/!svn/ver/382/branches/CosmoMongerPHP/protected/views/account/ResetPassword.php
+END
+VerifyEmailSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/VerifyEmailSuccess.php
+END
+ChangePassword.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cosmomonger/!svn/ver/380/branches/CosmoMongerPHP/protected/views/account/ChangePassword.php
+END
+Login.php
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/cosmomonger/!svn/ver/376/branches/CosmoMongerPHP/protected/views/account/Login.php
+END
+ForgotPasswordSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 103
+/svn/cosmomonger/!svn/ver/382/branches/CosmoMongerPHP/protected/views/account/ForgotPasswordSuccess.php
+END
+VerifyEmail.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/VerifyEmail.php
+END
+SendVerificationCodeSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/SendVerificationCodeSuccess.php
+END
+ForgotPassword.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cosmomonger/!svn/ver/382/branches/CosmoMongerPHP/protected/views/account/ForgotPassword.php
+END
+Register.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/Register.php
+END
+ChangeEmailSuccess.php
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/ChangeEmailSuccess.php
+END
+SendVerificationCode.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cosmomonger/!svn/ver/379/branches/CosmoMongerPHP/protected/views/account/SendVerificationCode.php
+END

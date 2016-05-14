@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 83
+/svn/cosmomonger/!svn/ver/383/branches/CosmoMongerPHP/protected/views/communication
+END
+Sent.php
+K 25
+svn:wc:ra_dav:version-url
+V 92
+/svn/cosmomonger/!svn/ver/376/branches/CosmoMongerPHP/protected/views/communication/Sent.php
+END
+Inbox.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/cosmomonger/!svn/ver/376/branches/CosmoMongerPHP/protected/views/communication/Inbox.php
+END
+ViewMessage.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cosmomonger/!svn/ver/376/branches/CosmoMongerPHP/protected/views/communication/ViewMessage.php
+END
+Compose.php
+K 25
+svn:wc:ra_dav:version-url
+V 95
+/svn/cosmomonger/!svn/ver/376/branches/CosmoMongerPHP/protected/views/communication/Compose.php
+END
+UnreadMessages.php
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/cosmomonger/!svn/ver/376/branches/CosmoMongerPHP/protected/views/communication/UnreadMessages.php
+END
+DeleteMessage.php
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/cosmomonger/!svn/ver/376/branches/CosmoMongerPHP/protected/views/communication/DeleteMessage.php
+END

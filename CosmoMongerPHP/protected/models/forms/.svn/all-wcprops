@@ -1,0 +1,53 @@
+K 25
+svn:wc:ra_dav:version-url
+V 76
+/svn/cosmomonger/!svn/ver/384/branches/CosmoMongerPHP/protected/models/forms
+END
+ResetPasswordForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 98
+/svn/cosmomonger/!svn/ver/382/branches/CosmoMongerPHP/protected/models/forms/ResetPasswordForm.php
+END
+SendVerificationCodeForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/cosmomonger/!svn/ver/380/branches/CosmoMongerPHP/protected/models/forms/SendVerificationCodeForm.php
+END
+ChangePasswordForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cosmomonger/!svn/ver/380/branches/CosmoMongerPHP/protected/models/forms/ChangePasswordForm.php
+END
+LoginForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 90
+/svn/cosmomonger/!svn/ver/384/branches/CosmoMongerPHP/protected/models/forms/LoginForm.php
+END
+VerifyEmailForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cosmomonger/!svn/ver/380/branches/CosmoMongerPHP/protected/models/forms/VerifyEmailForm.php
+END
+ChangeEmailForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 96
+/svn/cosmomonger/!svn/ver/380/branches/CosmoMongerPHP/protected/models/forms/ChangeEmailForm.php
+END
+ForgotPasswordForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 99
+/svn/cosmomonger/!svn/ver/382/branches/CosmoMongerPHP/protected/models/forms/ForgotPasswordForm.php
+END
+RegisterForm.php
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/cosmomonger/!svn/ver/380/branches/CosmoMongerPHP/protected/models/forms/RegisterForm.php
+END
