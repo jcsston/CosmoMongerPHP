@@ -45,9 +45,9 @@ return array(
 		),
 		// uncomment the following to set up database
 		'db'=>array(
-			'connectionString'=>'mysql:host=warpcore;dbname=CosmoMonger',
-			'username'=>'CosmoMonger',
-			'password'=>'6phc6FA4yc6VHnVm',
+			'connectionString'=>'mysql:host=localhost;dbname=c9',
+			'username'=>'jcsston',
+			'password'=>'',
 		),
 		'jformvalidate' => array (
 			'class' => 'application.extensions.jformvalidate.EJFValidate'
