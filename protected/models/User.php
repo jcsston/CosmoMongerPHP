@@ -214,12 +214,11 @@ class User extends CActiveRecord
 	/// <exception cref="CosmoMongerException">Thrown if not enough time has passed since the last verification e-mail for this user.</exception>
 	public function sendVerificationCode($baseVerificationCodeUrl)
 	{
-		$fiveMinutesAgo = new Date();
-		$fiveMinutesAgo->subtractSeconds(5 * 60);
+		$fiveMinutesAgo = new DateTime();
+		$fiveMinutesAgo->sub(DateInterval::createFromDateString('5 minutes'));
 
 		// Check that it has been at least 5 minutes since the last verification e-mail
-		$lastVerificationSent = new Date($this->LastVerificationSent);
-		if ($lastVerificationSent->after($fiveMinutesAgo)) {
+		if ($this->LastVerificationSent > $fiveMinutesAgo->getTimestamp()) {
 			throw new CosmoMongerException("Verification e-mails can only be sent every 5 minutes.");
 		}
 
@@ -253,8 +252,8 @@ class User extends CActiveRecord
 		else
 		{
 			// Update datetime of last verification e-mail sent
-			$currentDate = new Date();
-			$this->LastVerificationSent = $currentDate->getDate();
+			$currentDate = new DateTime();
+			$this->LastVerificationSent = $currentDate->getTimestamp();
 	
 			// Save database changes
 			$this->save();
@@ -306,10 +305,10 @@ class User extends CActiveRecord
 		else
 		{
 			$this->PasswordResetCode = $resetCode;
-			$currentDate = new Date();
+			$currentDate = new DateTime();
 			// Expires in 5 hours
-			$currentDate->addSeconds(5 * 60 * 60);
-			$this->PasswordResetExpiration = $currentDate->getDate();
+			$currentDate->add(DateInterval::createFromDateString('5 hours'));
+			$this->PasswordResetExpiration = $currentDate->getTimestamp();
 
 			// Save database changes
 			$this->save();
@@ -406,8 +405,8 @@ class User extends CActiveRecord
 		// Check if the passed in code matches the one in the database and code has not expired
 		if ($resetPasswordCode === $this->PasswordResetCode) 
 		{
-			$currentDate = new Date();
-			if ($currentDate->before(new Date($this->PasswordResetExpiration)))
+			$currentDate = new DateTime();
+			if ($currentDate->getTimestamp() < $this->PasswordResetExpiration)
 			{
 				// Code is still good, Generate new password
 				$newPassword = '';
@@ -464,8 +463,8 @@ class User extends CActiveRecord
 		$player->Name = $name;
 		$player->RaceId = $race->RaceId;
 		$player->Alive = true;
-		$currentDate = new Date();
-		$player->LastPlayed = $currentDate->getDate();
+		$currentDate = new DateTime();
+		$player->LastPlayed = $currentDate->getTimestamp();
 
 		// Assign the default starting location based on the race
 		$startingSystem = $race->HomeSystem;

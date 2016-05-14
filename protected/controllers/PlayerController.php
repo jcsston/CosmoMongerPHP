@@ -38,6 +38,10 @@ class PlayerController extends GameController
 	public function actionPlayerProfile()
 	{
 		$player = $this->getGameManager()->getCurrentPlayer();
+		if ($player == NULL) {
+			$this->redirect($this->createUrl('CreatePlayer'));
+			return;
+		}
 		$viewData = array(
 			'playerId' => $player->PlayerId,
 			'name' => $player->Name,

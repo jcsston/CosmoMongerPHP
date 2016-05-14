@@ -251,9 +251,9 @@ class Ship extends CActiveRecord
 
 		// Update the database
 		$this->TargetSystemId = $targetSystem->SystemId;
-		$targetSystemTime = new Date();
-		$targetSystemTime->addSeconds($travelTime);
-		$this->TargetSystemArrivalTime = $targetSystemTime->getDate();
+		$targetSystemTime = new DateTime();
+		$targetSystemTime->add(DateInterval::createFromDateString($travelTime . ' seconds'));
+		$this->TargetSystemArrivalTime = $targetSystemTime->getTimestamp();
 		
 		$this->save();
 
@@ -273,9 +273,9 @@ class Ship extends CActiveRecord
 			assert($this->TargetSystemId != null, "There also should be a target system");
 
 			// Has the arrival time passed?
-			$currentTime = new Date();
-			$arrivalTime = new Date($this->TargetSystemArrivalTime);
-			if ($currentTime->after($arrivalTime))
+			$currentTime = new DateTime();
+			$arrivalTime = new DateTime($this->TargetSystemArrivalTime);
+			if ($currentTime->getTimestamp() > $arrivalTime->getTimestamp())
 			{
 				// The ship has arrived, change the location of the ship and clear out the travel fields
 				$this->SystemId = $this->TargetSystemId;

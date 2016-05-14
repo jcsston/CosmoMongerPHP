@@ -269,8 +269,8 @@ class Player extends CActiveRecord
 			// Create new PlayerRecord row
 			$record = new PlayerRecord();
 			$record->PlayerId = $this->PlayerId;
-			$currentDate = new Date();
-			$record->RecordTime = $currentDate->getDate();
+			$currentDate = new DateTime();
+			$record->RecordTime = $currentDate->getTimestamp();
 			$record->TimePlayed = $this->TimePlayed;
 
 			// Copy record values
@@ -337,11 +337,11 @@ class Player extends CActiveRecord
 	{
 		if ($this->Alive)
 		{
-			$currentDate = new Date();
-			$lastPlayTime = new Date($this->LastPlayed);
+			$currentDate = new DateTime();
+			$lastPlayTime = new DateTime($this->LastPlayed);
 			
 			// Calcuate time since last play in seconds
-			$playTimeLength = $currentDate->getTime() - $lastPlayTime->getTime();
+			$playTimeLength = $currentDate->getTimestamp() - $lastPlayTime->getTimestamp();
 
 			// Login timeout is 5 minutes, so we ignore times greater than 5 minutes
 			if ($playTimeLength < 5 * 60)
@@ -358,7 +358,7 @@ class Player extends CActiveRecord
 			}
 
 			// Update last play datetime
-			$this->LastPlayed = $currentDate->getDate();
+			$this->LastPlayed = $currentDate->getTimestamp();
 
 			// Save database changes
 			$this->save();

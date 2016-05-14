@@ -41,7 +41,9 @@ class GameManager
 		// with hint fetches the Ship info in the same query, since just about every player action will invole
 		// their ship, fetching this now will reduce the number of needed queries
 		$alivePlayers = $this->currentUser->Players(array('condition'=>'Alive = 1', 'with'=>'Ship'));
-		assert (count($alivePlayers) < 2);
+		if (count($alivePlayers) == 0) {
+			return NULL;
+		}
 		return $alivePlayers[0];
 	}
 	
