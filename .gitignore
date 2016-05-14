@@ -4,4 +4,4 @@ protected/runtime/*
 !protected/runtime/.gitignore
 protected/data/*.db
 themes/classic/views/
-CosmoMongerPHP/db/liquibase.log
+db/liquibase.log
