@@ -16,11 +16,25 @@ return array(
 
 	// autoloading model and component classes
 	'import'=>array(
+		'application.controllers.*',
 		'application.models.*',
+		'application.models.forms.*',
 		'application.components.*',
-		'application.extensions.jformvalidate.EHtml',
+		'application.extensions.jformvalidate.EHtml',		
+		'application.modules.user.models.*',
 	),
 
+	'modules' => array(
+		'user' => array(
+			'modules' => array(
+				'role',
+				'profiles',
+				'messages',
+				),
+      'debug' => true,
+			)
+		),
+		
 	// application components
 	'components'=>array(
 		'log'=>array(
@@ -28,31 +42,50 @@ return array(
 			'routes'=>array(
 				array(
 					'class'=>'CFileLogRoute',
+					//'categories'=>'CosmoMongerPHP.*',
 					'levels'=>'error, warning',
 				),
-				/* Show SQL queries in FireBug window
+				/* Show SQL queries in FireBug window */
 				array(
 					'class'=>'CWebLogRoute',
 					'categories'=>'system.db.CDbCommand',
 					'showInFireBug'=>true,
 				),
-				*/
+				// */
 			),
 		),
+		/*
 		'user'=>array(
 			// enable cookie-based authentication
 			'allowAutoLogin'=>true,
+			'loginUrl'=>array('Account/Login'),
 		),
+		*/
+		 'user'=>array(
+			  'class' => 'application.modules.user.components.YumWebUser',
+			  'allowAutoLogin'=>true,
+			  'loginUrl' => array('/user/user/login'),
+			),
 		// uncomment the following to set up database
 		'db'=>array(
-			'connectionString'=>'mysql:host=localhost;dbname=c9',
-			'username'=>'jcsston',
-			'password'=>'',
+			'connectionString'=>'mysql:host=localhost;dbname=CosmoMonger',
+			'username'=>'CosmoMonger',
+			'password'=>'6phc6FA4yc6VHnVm',
+			'schemaCachingDuration'=>60,
 		),
 		'jformvalidate' => array (
 			'class' => 'application.extensions.jformvalidate.EJFValidate'
 		),
-		
+		'email'=>array(
+			'class'=>'application.extensions.email.Email',
+			'delivery'=>'php', // Will use the php mailing function,
+			// May also be set to 'debug' to instead dump the contents of the email into the view.
+		),
+		/*
+		'cache'=>array(
+			'class'=>'system.caching.CApcCache',
+		),
+		*/
 	),
 
 
@@ -60,6 +93,8 @@ return array(
 	// using Yii::app()->params['paramName']
 	'params'=>array(
 		// this is used in contact page
-		'adminEmail'=>'admin@cosmomonger.com',
+		'adminEmail'=>'CosmoMonger <admin@cosmomonger.com>',
+		"RecaptchaPublicKey" => "6LeDhgQAAAAAAG-nenSNpjs1911ncXSfaxvUMQ0b",
+		"RecaptchaPrivateKey" => "6LeDhgQAAAAAANBDuCw87VxdK41ymu4GUE571GnN",
 	),
 );

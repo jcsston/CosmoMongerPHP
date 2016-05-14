@@ -1,2 +1,6 @@
-This is the view content for action "<?php echo $this->action->id; ?>" of controller "<?php echo $this->id; ?>".
-<br />You may customize this view by editing the file "<?php echo __FILE__; ?>".
+<?php $this->pageTitle='Changed E-Mail'; ?>
+
+<h1>Changed Email</h1>
+<p>
+    Your email has been changed successfully.
+</p>

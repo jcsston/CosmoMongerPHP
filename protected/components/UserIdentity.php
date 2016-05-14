@@ -7,18 +7,6 @@
  */
 class UserIdentity extends CUserIdentity
 {
-	public static function hashPassword($password) {
-		//base64_encode 
-	}
-
-	private function checkPassword($hashedPassword) {
-		$this->password;
-		
-		//base64_encode 
-		
-		return false;
-	}
-	
 	/**
 	 * Authenticates a user.
 	 * The example implementation makes sure if the username and password
@@ -29,16 +17,23 @@ class UserIdentity extends CUserIdentity
 	 */
 	public function authenticate()
 	{
-		$user = User::model()->findByAttributes(array('username'=>$this->username));
-		
-		if (!isset($user)) {
-			$this->errorCode=self::ERROR_USERNAME_INVALID;
-		} else if (!$this->checkPassword($user->password)) {
-			$this->errorCode = self::ERROR_PASSWORD_INVALID;
-		} else {
-			$this->errorCode = self::ERROR_NONE;
+		$record = User::model()->findByAttributes(array('UserName'=>$this->username));
+		if (!isset($record)) 
+		{
+			$this->errorCode = self::ERROR_USERNAME_INVALID;
+			return false;
 		}
 		
-		return !$this->errorCode;
+		if ($record->validatePassword($this->password)) 
+		{
+			$this->errorCode = self::ERROR_NONE;
+			return true;
+		}
+		else
+		{
+			// Invalid password?
+			$this->errorCode = self::ERROR_PASSWORD_INVALID;
+			return false;
+		}
 	}
 }

@@ -54,13 +54,13 @@ class Race extends CActiveRecord
 		// NOTE: you may need to adjust the relation name and the related
 		// class name for the relations automatically generated below.
 		return array(
-			'npcs' => array(self::HAS_MANY, 'Npc', 'RaceId'),
-			'players' => array(self::HAS_MANY, 'Player', 'RaceId'),
-			'race' => array(self::HAS_ONE, 'Race', 'RaceId'),
-			'racialEnemy' => array(self::BELONGS_TO, 'Race', 'RacialEnemyId'),
-			'races' => array(self::HAS_MANY, 'Race', 'RacialPreferenceId'),
-			'racialPreference' => array(self::BELONGS_TO, 'Race', 'RacialPreferenceId'),
-			'homeSystem' => array(self::BELONGS_TO, 'System', 'HomeSystemId'),
+			'Npcs' => array(self::HAS_MANY, 'Npc', 'RaceId'),
+			'Players' => array(self::HAS_MANY, 'Player', 'RaceId'),
+			//'Race' => array(self::HAS_ONE, 'Race', 'RaceId'),
+			'RacialEnemy' => array(self::BELONGS_TO, 'Race', 'RacialEnemyId'),
+			//'races' => array(self::HAS_MANY, 'Race', 'RacialPreferenceId'),
+			'RacialPreference' => array(self::BELONGS_TO, 'Race', 'RacialPreferenceId'),
+			'HomeSystem' => array(self::BELONGS_TO, 'System', 'HomeSystemId'),
 		);
 	}
 

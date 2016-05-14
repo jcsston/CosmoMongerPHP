@@ -109,52 +109,50 @@
                         </div>
                 </li>
             </ul>
-<?php /* ?>
             <ul>	
-                <li><%= Html.ActionLink("Player", "Index", "Player")%>
+                <li><?= CHtml::Link("Player", array('Player/Index')) ?>
                     <ul>
-                        <li><%= Html.ActionLink("User Profile", "UserProfile", "Account")%></li>
-                        <li><%= Html.ActionLink("Player Profile", "PlayerProfile", "Player")%></li>
-                        <li><%= Html.ActionLink("Current Ship", "ViewShip", "Ship")%></li>
-                        <li><%= Html.ActionLink("View Record", "ViewRecord", "PlayerRecord")%></li>
-                        <li><%= Html.ActionLink("Record History", "ViewRecordHistory", "PlayerRecord")%></li>
-                        <li><%= Html.ActionLink("Top Records", "ListRecords", "PlayerRecord")%></li>
+                        <li><?= CHtml::Link("User Profile", array('Account/UserProfile')) ?></li>
+                        <li><?= CHtml::Link("Player Profile", array('Player/PlayerProfile')) ?></li>
+                        <li><?= CHtml::Link("Current Ship", array('Ship/ViewShip')) ?></li>
+                        <li><?= CHtml::Link("View Record", array('PlayerRecord/ViewRecord')) ?></li>
+                        <li><?= CHtml::Link("Record History", array('PlayerRecord/ViewRecordHistory')) ?></li>
+                        <li><?= CHtml::Link("Top Records", array('PlayerRecord/ListRecords')) ?></li>
 
 
                     </ul>
                 </li>
             </ul>
             <ul>                    	                            
-        	    <li><%= Html.ActionLink("Communication", "Index", "Communication")%>
+        	    <li><?= CHtml::Link("Communication", array('Communication/Index')) ?>
                     <ul>
-                        <li><%= Html.ActionLink("Inbox", "Inbox", "Communication")%></li>
-                        <li><%= Html.ActionLink("Sent", "Sent", "Communication")%></li>
-                        <li><%= Html.ActionLink("Compose", "Compose", "Communication")%></li>
-                        <li><%= Html.ActionLink("Buddy List", "BuddyList", "BuddyList")%></li>
-                        <li><%= Html.ActionLink("Ignore List", "IgnoreList", "BuddyList")%></li>                             
+                        <li><?= CHtml::Link("Inbox", array('Communication/Inbox')) ?></li>
+                        <li><?= CHtml::Link("Sent", array('Communication/Sent')) ?></li>
+                        <li><?= CHtml::Link("Compose", array('Communication/Compose')) ?></li>
+                        <li><?= CHtml::Link("Buddy List", array('BuddyList/BuddyList')) ?></li>
+                        <li><?= CHtml::Link("Ignore List", array('BuddyList/IgnoreList')) ?></li>                             
                     </ul>
                 </li>
             </ul>
             <ul>	
-                <li><%= Html.ActionLink("System", "Index", "Trade")%>
+                <li><?= CHtml::Link("System", array('Trade/Index')) ?>
                     <ul>
-                        <li><%= Html.ActionLink("List Goods", "ListGoods", "Trade")%></li>
-                        <li><%= Html.ActionLink("Good Price Table", "PriceTable", "Trade")%></li>
-                        <li><%= Html.ActionLink("Visit Bank", "Bank", "Bank")%></li>
-                        <li><%= Html.ActionLink("List Ships", "ListShips", "Ship")%></li>
-                        <li><%= Html.ActionLink("Ship Upgrades", "ListUpgrades", "Ship")%></li>
+                        <li><?= CHtml::Link("List Goods", array('Trade/ListGoods')) ?></li>
+                        <li><?= CHtml::Link("Good Price Table", array('Trade/PriceTable')) ?></li>
+                        <li><?= CHtml::Link("Visit Bank", array('Bank/Bank')) ?></li>
+                        <li><?= CHtml::Link("List Ships", array('Ship/ListShips')) ?></li>
+                        <li><?= CHtml::Link("Ship Upgrades", array('Ship/ListUpgrades')) ?></li>
                     </ul>
                 </li>
             </ul>
             <ul>	
-                <li><%= Html.ActionLink("Travel", "Index", "Travel")%>
+                <li><?= CHtml::Link("Travel", array('Travel/Index')) ?>
                     <ul>
-                        <li><%= Html.ActionLink("Travel", "Travel", "Travel")%></li>
-                        <li><%= Html.ActionLink("Attack", "Attack", "Combat")%></li>
+                        <li><?= CHtml::Link("Travel", array('Travel/Travel')) ?></li>
+                        <li><?= CHtml::Link("Attack", array('Combat/Attack')) ?></li>
                     </ul>
                 </li>
             </ul>
-<?php */ ?>
             <ul>
                 <li><?= CHtml::Link("Logout", array('Account/Logout')) ?></li>
             </ul>
@@ -198,7 +196,9 @@
 		&copy; Copyright 2008-2009 <?= CHtml::link("CosmoMonger", array('Home/About')) ?>
 		<br />
 		rev <?= CosmoManager::getCodeVersion() ?> (db <?= CosmoManager::getDatabaseVersion() ?>) <br />
-<?php /*
+<?php 
+		$processingTime = Yii::getLogger()->getExecutionTime();
+/*
         <% 
             double processingTime = (DateTime.Now - this.ViewContext.HttpContext.Timestamp).TotalSeconds;
             Dictionary<string, object> props = new Dictionary<string, object>
@@ -210,10 +210,10 @@
             };
             string message = this.ViewContext.RouteData.Values["controller"] + "." + this.ViewContext.RouteData.Values["action"];
             Microsoft.Practices.EnterpriseLibrary.Logging.Logger.Write(message, "Page Log", 800, 0, System.Diagnostics.TraceEventType.Verbose, "Master Page Log", props);
-        %>
-        Processing Time: <%=processingTime%> seconds
-		*/ ?>
-		<?= Yii::powered(); ?>
+        %> 
+*/
+		?>
+        Processing Time: <?= printf("%.1f", $processingTime) ?> seconds 
      </p>
 </div>
 </div>

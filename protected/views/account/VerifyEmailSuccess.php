@@ -1,2 +1,6 @@
-This is the view content for action "<?php echo $this->action->id; ?>" of controller "<?php echo $this->id; ?>".
-<br />You may customize this view by editing the file "<?php echo __FILE__; ?>".
+<?php $this->pageTitle='Verified Email'; ?>
+
+<h1>Verified Email</h1>
+
+<p>Your e-mail <b><?= CHtml::encode($email) ?></b> has been verified.</p>
+<p>You can now <?= CHtml::link("Login", array("Login", "LoginForm[username]"=>$username)) ?>.</p>

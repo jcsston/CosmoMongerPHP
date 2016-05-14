@@ -1,2 +1,7 @@
-This is the view content for action "<?php echo $this->action->id; ?>" of controller "<?php echo $this->id; ?>".
-<br />You may customize this view by editing the file "<?php echo __FILE__; ?>".
+<?php $this->pageTitle='Reset Password Email Sent'; ?>
+
+<h1>Reset Password Email Sent</h1>
+<p>
+	An email message has been sent to your email address that includes a link 
+	and details on how to reset your password.
+</p>

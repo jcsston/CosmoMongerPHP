@@ -1,2 +1,20 @@
-This is the view content for action "<?php echo $this->action->id; ?>" of controller "<?php echo $this->id; ?>".
-<br />You may customize this view by editing the file "<?php echo __FILE__; ?>".
+<?php $this->pageTitle='Send Verification Code'; ?>
+
+<h1>Send Verification Code Email</h1>
+
+<?= EHtml::beginForm(); ?>
+
+<?= EHtml::errorSummary($form); ?>
+<table cellspacing="5">
+	<tr>
+		<td>Username:</td>
+		<td>
+			<?= EHtml::activeTextField($form,"username") ?>
+		</td>
+	</tr>
+	<tr>
+		<td></td>
+		<td><?= EHtml::submitButton('Send'); ?></td>
+	</tr>
+</table>
+<?= EHtml::endForm(); ?>

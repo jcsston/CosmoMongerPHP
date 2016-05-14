@@ -1,6 +1,6 @@
 <?php
 
-class CommunicationController extends CController
+class CommunicationController extends GameController
 {
 	public function actionInbox()
 	{
@@ -19,7 +19,17 @@ class CommunicationController extends CController
 
 	public function actionViewMessage()
 	{
-		$this->render('ViewMessage');
+		if (isset($_GET['messageId']))
+		{
+			$message = $this->getGameManager()->getCurrentUser()->getMessage($_GET['messageId']);
+			$viewData = array();
+			$this->render('ViewMessage', $viewData);
+		}
+		else
+		{
+			$this->redirect(array('Inbox'));
+		}
+		
 	}
 
 	public function actionDeleteMessage()
@@ -29,6 +39,7 @@ class CommunicationController extends CController
 
 	public function actionUnreadMessages()
 	{
+		$unreadMessages = $this->getGameManager()->getCurrentUser()->getUnreadMessages();
 		$this->render('UnreadMessages');
 	}
 
@@ -36,32 +47,4 @@ class CommunicationController extends CController
 	{
 		$this->render('index');
 	}
-
-	// -----------------------------------------------------------
-	// Uncomment the following methods and override them if needed
-	/*
-	public function filters()
-	{
-		// return the filter configuration for this controller, e.g.:
-		return array(
-			'inlineFilterName',
-			array(
-				'class'=>'path.to.FilterClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-
-	public function actions()
-	{
-		// return external action classes, e.g.:
-		return array(
-			'action1'=>'path.to.ActionClass',
-			'action2'=>array(
-				'class'=>'path.to.AnotherActionClass',
-				'propertyName'=>'propertyValue',
-			),
-		);
-	}
-	*/
 }
