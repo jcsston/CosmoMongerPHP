@@ -38,8 +38,9 @@
 				<td>Verify you are human:</td>
 				<td>
 					<?php $this->widget('application.extensions.recaptcha.EReCaptcha', 
-					   array('model'=>$user, 'attribute'=>'verifyCode',
+					   array('model'=>$form, 'attribute'=>'verifyCode',
 							 'theme'=>'blackglass', 'language'=>'en_US', 
+							 'useSsl'=>true,
 							 'publicKey'=>Yii::app()->params['RecaptchaPublicKey'])) ?>
 					<?= CHtml::error($form, 'verifyCode'); ?>
 				</td>
