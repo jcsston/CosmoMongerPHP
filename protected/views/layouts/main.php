@@ -193,7 +193,7 @@
     <script type="text/javascript" src="http://cosmomonger.uservoice.com/pages/general/widgets/tab.js?alignment=right&amp;color=000000"></script>
 <% } %> */ ?>
     <p>
-		&copy; Copyright 2008-2009 <?= CHtml::link("CosmoMonger", array('Home/About')) ?>
+		&copy; Copyright 2008-2016 <?= CHtml::link("CosmoMonger", array('Home/About')) ?>
 		<br />
 		rev <?= CosmoManager::getCodeVersion() ?> (db <?= CosmoManager::getDatabaseVersion() ?>) <br />
 <?php 

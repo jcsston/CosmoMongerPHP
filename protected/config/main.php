@@ -68,9 +68,9 @@ return array(
 			),
 		// uncomment the following to set up database
 		'db'=>array(
-			'connectionString'=>'mysql:host=localhost;dbname=CosmoMonger',
-			'username'=>'CosmoMonger',
-			'password'=>'6phc6FA4yc6VHnVm',
+			'connectionString'=>'mysql:host=localhost;dbname=c9',
+			'username'=>'jcsston',
+			'password'=>'',
 			'schemaCachingDuration'=>60,
 		),
 		'jformvalidate' => array (
