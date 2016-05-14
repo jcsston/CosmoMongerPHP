@@ -2433,11 +2433,7 @@
     </sql>
   </changeSet>
   <changeSet author="Roger Boykin" id="49">
-    <comment>Adding and populating RaceId column to System Table</comment>
-    <addColumn tableName="System">
-      <column name="RaceId" type="int"/>
-    </addColumn>  
-    <addForeignKeyConstraint baseColumnNames="RaceId" baseTableName="Race" constraintName="FK_RaceId_Race"       deferrable="false" initiallyDeferred="false" onDelete="RESTRICT" onUpdate="RESTRICT"            referencedColumnNames="RaceId" referencedTableName="Race"/>
+    <comment>Populating RaceId column in System Table</comment>
     <update tableName="System">
       <column name="RaceId" value="5"/>
       <where>SystemId='1'</where>
