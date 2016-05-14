@@ -10,6 +10,13 @@ class PlayerController extends GameController
 	/// <returns>The PlayerProfile view if player is created, CreatePlayer view otherwise.</returns>
 	public function actionCreatePlayer()
 	{
+		$player = $this->getGameManager()->getCurrentPlayer();
+		if ($player != NULL) {
+			// User already has a player, redirecting to player profile
+			$this->redirect($this->createUrl('PlayerProfile'));
+			return;
+		}
+
 		$this->render('CreatePlayer');
 	}
 

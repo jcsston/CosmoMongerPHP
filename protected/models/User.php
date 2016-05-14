@@ -103,7 +103,7 @@ class User extends CActiveRecord
 	
 	private function checkPassword($password) 
 	{
-		$currentPassword = base64_decode($this->Password);
+		$currentPassword = $this->Password;
 		
 		// Extract the salt
 		$salt = substr($currentPassword, 0, User::$SALT_LENGTH);
@@ -130,13 +130,12 @@ class User extends CActiveRecord
 			Yii::log("Generated Salt: $salt", "trace", "CosmoMongerPHP.models.User");
 		}
 		
-		// Convert the entered password string to UTF-16 / UCS-2LE encoding
-		$utf16Password = mb_convert_encoding($password, "UCS-2LE");		
-		$passwordString = $salt . $utf16Password;
+		// Combine the salt and password together for hashing
+		$passwordString = $salt . $password;
 		
-		// Hash the salt + UTF-16 password
-		$hashedPassword = hash("sha512", $passwordString, true);
-		$hashedPasswordWithSalt = base64_encode($salt . $hashedPassword);
+		// Hash the salt + password
+		$hashedPassword = hash("sha512", $passwordString);
+		$hashedPasswordWithSalt = $salt . $hashedPassword;
 
 		return $hashedPasswordWithSalt;
 	}
@@ -154,8 +153,8 @@ class User extends CActiveRecord
 		if ($validPassword && $this->Validated)
 		{
 			$this->LoginAttemptCount = 0;
-			$currentDate = new Date();
-			$this->LastLogin = $currentDate->getDate();
+			$currentDate = new DateTime();
+			$this->LastLogin = $currentDate->format("c");
 
 			// Save database changes
 			$this->save();
@@ -218,7 +217,7 @@ class User extends CActiveRecord
 		$fiveMinutesAgo->sub(DateInterval::createFromDateString('5 minutes'));
 
 		// Check that it has been at least 5 minutes since the last verification e-mail
-		if ($this->LastVerificationSent > $fiveMinutesAgo->getTimestamp()) {
+		if (new DateTime($this->LastVerificationSent) > $fiveMinutesAgo) {
 			throw new CosmoMongerException("Verification e-mails can only be sent every 5 minutes.");
 		}
 
@@ -253,7 +252,7 @@ class User extends CActiveRecord
 		{
 			// Update datetime of last verification e-mail sent
 			$currentDate = new DateTime();
-			$this->LastVerificationSent = $currentDate->getTimestamp();
+			$this->LastVerificationSent = $currentDate->format("c");
 	
 			// Save database changes
 			$this->save();
@@ -275,6 +274,9 @@ class User extends CActiveRecord
 			$resetCode .= dechex(mt_rand());
 		}
 		
+		$url = $baseResetPasswordUrl . $resetCode;
+		Yii::log("Sending password reset link for user " . $this->Email . " URL: " . $url, "info", "CosmoMongerPHP.models.User");
+		
 		// Build e-mail message
 		$email = Yii::app()->email;
 		$email->from = Yii::app()->params['adminEmail'];
@@ -284,7 +286,7 @@ class User extends CActiveRecord
 			"This email is a response to your request for a new password for your\n" .
 			"CosmoMonger account. To confirm that you really want to change your\n" .
 			"password, please click on the following link:\n\n" .
-			$baseResetPasswordUrl . $resetCode . "\n\n" .
+			$url . "\n\n" .
 			"Clicking on this link will take you to a web page that will let you\n" .
 			"reset your password. Once you've rest your password, you'll\n" .
 			"be able to log in to your CosmoMonger account.\n" .
@@ -308,7 +310,8 @@ class User extends CActiveRecord
 			$currentDate = new DateTime();
 			// Expires in 5 hours
 			$currentDate->add(DateInterval::createFromDateString('5 hours'));
-			$this->PasswordResetExpiration = $currentDate->getTimestamp();
+			Yii::log("Setting PasswordResetExpiration to " . $currentDate->format("c"), "info", "CosmoMongerPHP.models.User");
+			$this->PasswordResetExpiration = $currentDate->format("c");
 
 			// Save database changes
 			$this->save();
@@ -406,7 +409,7 @@ class User extends CActiveRecord
 		if ($resetPasswordCode === $this->PasswordResetCode) 
 		{
 			$currentDate = new DateTime();
-			if ($currentDate->getTimestamp() < $this->PasswordResetExpiration)
+			if ($currentDate < new DateTime($this->PasswordResetExpiration))
 			{
 				// Code is still good, Generate new password
 				$newPassword = '';
@@ -464,7 +467,7 @@ class User extends CActiveRecord
 		$player->RaceId = $race->RaceId;
 		$player->Alive = true;
 		$currentDate = new DateTime();
-		$player->LastPlayed = $currentDate->getTimestamp();
+		$player->LastPlayed = $currentDate->format("c");
 
 		// Assign the default starting location based on the race
 		$startingSystem = $race->HomeSystem;
