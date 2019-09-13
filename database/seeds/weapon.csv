@@ -1,0 +1,5 @@
+"weapon_id","name","power","turn_cost","cargo_cost","base_price"
+1,Railgun,8,4,0,1000
+2,Laser,5,2,2,10000
+3,Missile,15,4,5,250000
+4,Newtonian,15,2,10,1000000

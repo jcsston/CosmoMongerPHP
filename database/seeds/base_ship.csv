@@ -1,0 +1,6 @@
+"base_ship_id","name","base_price","cargo_space","initial_jump_drive_id","initial_weapon_id","initial_shield_id","hit_factor","level"
+1,Glorified Trash Can,5000,25,1,1,1,-2,1
+2,Rover,25000,50,1,1,1,-1,2
+3,Widow Maker,50000,75,1,1,1,0,3
+4,Dagger,80000,100,1,1,1,1,4
+5,Weed Wacker,125000,150,1,1,1,2,5

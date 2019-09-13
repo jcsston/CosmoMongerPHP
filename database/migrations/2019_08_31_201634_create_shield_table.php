@@ -16,7 +16,7 @@ class CreateShieldTable extends Migration
         Schema::create('shield', function (Blueprint $table) {
             $table->bigIncrements('shield_id');
             $table->string('name', 255);
-            $table->integer('stength');
+            $table->integer('strength');
             $table->integer('base_price');
             $table->integer('cargo_cost');
             $table->timestamps();

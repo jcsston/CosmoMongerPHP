@@ -1,0 +1,740 @@
+"npc_name_id","npc_type_id","name"
+1,4,Alia
+2,4,Laure
+3,4,Kathirl
+4,4,Maya
+5,4,Andy
+6,4,Anna
+7,4,Tatriso
+8,4,Wenn
+9,4,Anne
+10,4,Deirean
+11,4,Vivia
+12,4,Mara
+13,4,Tathero
+14,4,Shia
+15,4,Kathle
+16,4,Debetha
+17,4,Sonie
+18,4,Julisti
+19,4,Claurin
+20,4,Julie
+21,4,Laurela
+22,4,Gina
+23,4,Joanna
+24,4,Angela
+25,4,Heathia
+26,4,Sylvia
+27,4,Nana
+28,4,Patina
+29,4,Vivia
+30,4,Vivia
+31,4,Eleksa
+32,4,Line
+33,4,Caron
+34,4,Jana
+35,4,Angelle
+36,4,Susa
+37,4,Shirlot
+38,4,Angelan
+39,4,Caren
+40,4,Leah
+41,4,Dia
+42,4,Nania
+43,4,Eily
+44,4,Angelai
+45,4,Terrie
+46,4,Diana
+47,4,Courtha
+48,4,Alie
+49,4,Karie
+50,4,Danne
+51,4,Joyce
+52,4,Laurico
+53,4,Vivia
+54,4,Nance
+55,4,Katin
+56,4,Wen
+57,4,Eleenda
+58,4,Marace
+59,4,Chriet
+60,4,Monicol
+61,4,Tarany
+62,4,Karol
+63,4,Carin
+64,4,Ally
+65,4,Pata
+66,4,Vivia
+67,4,Tra
+68,4,Baristi
+69,4,Joyce
+70,4,Aim
+71,4,Kimbecc
+72,4,Terin
+73,4,Lauren
+74,4,Laurele
+75,4,Claudia
+76,4,Tamarri
+77,4,Dendy
+78,4,Nicky
+79,4,Emilyn
+80,4,Keri
+81,4,Sustin
+82,4,Laurtha
+83,4,Mary
+84,4,Valica
+85,4,Heatal
+86,4,Racherr
+87,4,Maristi
+88,4,Aimbett
+89,4,Katriso
+90,4,Cares
+91,4,Giulina
+92,4,Care
+93,4,Christi
+94,4,Lina
+95,4,Stephar
+96,4,Wenisan
+97,4,Dan
+98,4,Wennee
+99,4,Cla
+100,4,Suzane
+101,4,Kele
+102,4,Nine
+103,4,Anna
+104,4,Gine
+105,4,Karicky
+106,4,Betha
+107,4,Suzaber
+108,4,Danie
+109,4,Dane
+110,4,Sarica
+111,4,Marooke
+112,4,Kimbecc
+113,4,Monie
+114,4,Broleks
+115,4,Doristi
+116,4,Kathare
+117,4,Shirdre
+118,4,Melaure
+119,4,Ale
+120,4,Listine
+121,4,Nandren
+122,4,Erina
+123,4,Amy
+124,4,Pamee
+125,4,Beah
+126,4,Dany
+127,4,Kare
+128,4,Dia
+129,4,Erina
+130,4,Jana
+131,4,Margaro
+132,4,Fra
+133,4,Nathero
+134,4,Chry
+135,4,Tiffane
+136,4,Carrina
+137,4,Saristi
+138,4,Anne
+139,4,Dorole
+140,4,Nine
+141,4,Dandra
+142,4,Jen
+143,4,Karanna
+144,4,Listy
+145,4,Vicoly
+146,4,Karise
+147,4,Cla
+148,4,Pamelly
+149,4,Amy
+150,4,Ericia
+151,4,Anne
+152,4,Julia
+153,4,Therlen
+154,4,Line
+155,4,Caronif
+156,4,Vivia
+157,4,Ste
+158,4,Joania
+159,4,Ashle
+160,4,Cyn
+161,4,Franna
+162,4,Therler
+163,4,Anna
+164,4,Angelia
+165,4,Tath
+166,4,Dannee
+167,4,Anne
+168,4,Brolee
+169,4,Beath
+170,4,Deborol
+171,4,Cassa
+172,4,Joane
+173,4,Candra
+174,4,Cryssan
+175,4,Rebetha
+176,4,Moniche
+177,4,Pamarin
+178,4,Nine
+179,4,Cla
+180,4,Beth
+181,4,Dana
+182,4,Allen
+183,4,Ashley
+184,4,Kathani
+185,4,Nathero
+186,4,Claurth
+187,4,Vivia
+188,4,Sary
+189,4,Tatrina
+190,4,Melise
+191,4,Vice
+192,4,Anna
+193,4,Clannee
+194,4,Kerleks
+195,4,Laudian
+196,4,Chry
+197,4,Kerice
+198,4,Bet
+199,4,Janda
+200,4,Meley
+201,4,Bara
+202,4,Dia
+203,4,Eri
+204,4,Sance
+205,4,Laura
+206,4,Breniet
+207,4,Jenne
+208,4,Anna
+209,4,Sonie
+210,4,Jennie
+211,4,Aim
+212,4,Krissan
+213,4,Cyn
+214,4,Eristy
+215,4,Mariett
+216,4,Maya
+217,4,Janne
+218,4,Susana
+219,4,Maronic
+220,4,Julica
+221,4,Mary
+222,4,Nathrie
+223,4,Christi
+224,4,Kelina
+225,4,Chana
+226,4,Canna
+227,4,Dane
+228,4,Leah
+229,4,Kimbecc
+230,4,Tara
+231,4,Diancy
+232,4,Natheri
+233,4,Laura
+234,4,Heah
+235,4,Dia
+236,4,Eile
+237,4,Kathero
+238,4,Caronis
+239,4,Eri
+240,4,Sha
+241,4,Caron
+242,4,Lina
+243,4,Renneen
+244,4,Anne
+245,4,Vica
+246,4,Ann
+247,4,Kerine
+248,4,Cassa
+249,4,Emileks
+250,4,Katina
+251,4,Kimberi
+252,4,Tartnee
+253,4,Stefann
+254,4,Martne
+255,4,Beath
+256,4,Kimberr
+257,4,Verry
+258,4,Cry
+259,4,Pamela
+260,4,Eleen
+261,4,Carina
+262,4,Giulian
+263,4,Chrissa
+264,4,Ele
+265,4,Anna
+266,4,Justine
+267,4,Sana
+268,4,Charist
+269,4,Elen
+270,4,Aimel
+271,4,Racy
+272,4,Brothar
+273,4,Chrissa
+274,4,Melly
+275,4,Anne
+276,4,Sher
+277,4,Heathel
+278,4,Bet
+279,4,Julizab
+280,4,Leandre
+281,4,Ericky
+282,4,Cassa
+283,4,Jen
+284,4,Ann
+285,4,Stephar
+286,4,Elen
+287,4,Jusa
+288,4,Tamartn
+289,4,Katherr
+290,4,Clanna
+291,4,Theron
+292,4,Sara
+293,4,Aley
+294,4,Caryste
+295,4,Gine
+296,4,Kimelly
+297,4,Vicky
+298,4,Laura
+299,4,Chareth
+300,4,Katri
+301,4,Adreter
+302,4,Rodd
+303,4,Edward
+304,4,Roger
+305,4,Bran
+306,4,Briam
+307,4,Art
+308,4,Aart
+309,4,Toby
+310,4,Vichad
+311,4,Thon
+312,4,Laro
+313,4,Rodd
+314,4,Rob
+315,4,Ruber
+316,4,Waymond
+317,4,Sterew
+318,4,Aard
+319,4,Chur
+320,4,Bart
+321,4,Anteve
+322,4,Bruce
+323,4,Jondam
+324,4,Toby
+325,4,Barry
+326,4,Haronat
+327,4,Scot
+328,4,Thomaso
+329,4,Fraig
+330,4,Harremy
+331,4,Chan
+332,4,Ben
+333,4,Sean
+334,4,Ruben
+335,4,Paun
+336,4,Boby
+337,4,Dart
+338,4,Ster
+339,4,Chan
+340,4,Jon
+341,4,Adamin
+342,4,Alandri
+343,4,Hun
+344,4,And
+345,4,Grey
+346,4,Chriam
+347,4,Jos
+348,4,Jamie
+349,4,Rick
+350,4,Frek
+351,4,Rayne
+352,4,Natther
+353,4,Walter
+354,4,Wilian
+355,4,Rosel
+356,4,Brenny
+357,4,Brad
+358,4,Todd
+359,4,Gor
+360,4,Ric
+361,4,Edwarry
+362,4,Alay
+363,4,Bremy
+364,4,Hun
+365,4,Andy
+366,4,Victoph
+367,4,Kevin
+368,4,Jasony
+369,4,Dan
+370,4,Derremy
+371,4,Dan
+372,4,Dave
+373,4,Jam
+374,4,Wadlenj
+375,4,Ster
+376,4,Rick
+377,4,Fremy
+378,4,Rosephe
+379,4,John
+380,4,Brick
+381,4,Phill
+382,4,Davin
+383,4,Scot
+384,4,Rogan
+385,4,Josephe
+386,4,Mat
+387,4,Stuan
+388,4,Shan
+389,4,Clan
+390,4,Keve
+391,4,Bill
+392,4,Ran
+393,4,Jeffrem
+394,4,Juss
+395,4,Clay
+396,4,Jon
+397,4,Jim
+398,4,Wayne
+399,4,Duark
+400,4,Ricart
+401,4,Ster
+402,4,Wade
+403,4,Evan
+404,4,Brey
+405,4,Joel
+406,4,Ricarth
+407,4,Ricark
+408,4,Roby
+409,4,Geordon
+410,4,Loger
+411,4,Waltevi
+412,4,Stert
+413,4,Alay
+414,4,Vick
+415,4,Roberet
+416,4,Mart
+417,4,Mart
+418,4,Ryan
+419,4,Ster
+420,4,Ivan
+421,4,Scot
+422,4,Scotthu
+423,4,Caro
+424,4,Ran
+425,4,Stevend
+426,4,Russeph
+427,4,Anteve
+428,4,Denjan
+429,4,Deandri
+430,4,Art
+431,4,Stert
+432,4,Sharlen
+433,4,Jay
+434,4,Aardo
+435,4,Richaro
+436,4,Ken
+437,4,Shaell
+438,4,Rogan
+439,4,Ster
+440,4,Paul
+441,4,Ryan
+442,4,Steve
+443,4,James
+444,4,Rubenja
+445,4,Walteph
+446,4,Sterek
+447,4,Pathuck
+448,4,Frade
+449,4,Bene
+450,4,Dan
+451,4,Adam
+452,4,Jim
+453,4,Will
+454,4,Jeff
+455,4,Jason
+456,4,Keithan
+457,4,Chuck
+458,4,Rick
+459,4,Fraig
+460,4,Harloss
+461,4,Crad
+462,4,Peteven
+463,4,Scot
+464,4,Richard
+465,4,Phill
+466,4,Jack
+467,4,Dondy
+468,4,Cran
+469,4,Sames
+470,4,Clay
+471,4,Barryan
+472,4,Steve
+473,4,Natris
+474,4,Rogan
+475,4,Aley
+476,4,Josseph
+477,4,Jim
+478,4,Wiliame
+479,4,Tom
+480,4,Allian
+481,4,Chricto
+482,4,Aley
+483,4,Barren
+484,4,Steph
+485,4,Josseph
+486,4,Brew
+487,4,Mike
+488,4,Jeff
+489,4,Joe
+490,4,Edwarle
+491,4,Chricha
+492,4,Anth
+493,4,Juss
+494,4,Rober
+495,4,Ivan
+496,4,Deand
+497,4,Thon
+498,4,Fraig
+499,4,Harleja
+500,4,Jeff
+501,4,Jeff
+502,4,Jack
+503,4,Frey
+504,4,Bark
+505,4,Cart
+506,4,Ben
+507,4,Aarry
+508,4,Corge
+509,4,Natris
+510,4,Chuce
+511,4,Roby
+512,4,Andank
+513,4,Charc
+514,4,Eug
+515,4,Dan
+516,4,Brade
+517,4,Gardon
+518,4,Scott
+519,4,Tobby
+520,4,Gordo
+521,4,Ruben
+522,4,Cordony
+523,4,Hen
+524,4,Jeff
+525,4,Joss
+526,4,Ted
+527,4,Russ
+528,4,Ted
+529,4,Tom
+530,4,Joel
+531,4,Robby
+532,4,Joe
+533,4,Eugerry
+534,4,Nathaun
+535,4,Benry
+536,4,Lary
+537,4,Jim
+538,4,Tom
+539,4,Shan
+540,4,Barry
+541,4,Aley
+542,4,Bruce
+543,4,Ran
+544,4,Adandy
+545,4,Hart
+546,4,Bran
+547,4,Briandy
+548,4,Hardon
+549,4,Derry
+550,4,Donat
+551,4,Stuanda
+552,4,Adren
+553,4,Pett
+554,4,Art
+555,4,Scot
+556,4,Andron
+557,4,Dan
+558,4,Den
+559,4,Stuan
+560,4,Jack
+561,4,Justore
+562,4,Henjame
+563,4,Carlex
+564,4,Anthewa
+565,4,Joel
+566,4,Mat
+567,4,And
+568,4,Pathael
+569,4,Dart
+570,4,Adroy
+571,4,Hen
+572,4,Rodd
+573,4,Ted
+574,4,Thon
+575,4,Brey
+576,4,Ted
+577,4,Ric
+578,4,Marc
+579,4,Edwarry
+580,4,Rick
+581,4,Patharc
+582,4,Maroy
+583,4,Justoph
+584,4,Brey
+585,4,Benjan
+586,4,Steremy
+587,4,Vicarry
+588,4,Den
+589,4,Sterry
+590,4,Dave
+591,4,Eris
+592,4,Cran
+593,4,Coretth
+594,4,Jeffrey
+595,4,Bris
+596,4,Corge
+597,4,Geordo
+598,4,Alejam
+599,4,Walter
+600,4,Carley
+601,5,Barbarossa Brothers
+602,5,Bartolomeo
+603,5,Benito de Soto
+604,5,Black Bart
+605,5,Black Beard
+606,5,Black Bellamy
+607,5,Black Caesar
+608,5,Buccaneers Servant
+609,5,Calico Jack
+610,5,Captain Benjamin Hornigold
+611,5,Captain Blood
+612,5,Captain Bully Hayes
+613,5,Captain Charles Vane
+614,5,Captain Christopher Mings
+615,5,Captain Clegg
+616,5,Captain Edward England
+617,5,Captain Enrique Brower
+618,5,Captain George Booth
+619,5,Captain George Lowther
+620,5,Captain Hector Barbossa
+621,5,Captain Henry Every
+622,5,Captain Hook
+623,5,Captain Horatio McCallister
+624,5,Captain Jack Dancer
+625,5,Captain Jack Rackam
+626,5,Captain Jack Sparrow
+627,5,Captain Jackman
+628,5,Captain James Kelley
+629,5,Captain Jan de Bouff
+630,5,Captain John Bowen
+631,5,Captain John Calles
+632,5,Captain Kennit
+633,5,Captain Pugwash
+634,5,Captain Thomas Bartholomew Red
+635,5,Captain Walker D. Plank
+636,5,Captains Executioner
+637,5,Cervantes de Leon
+638,5,Gunpowder Gertie
+639,5,Guybrush Threepwood
+640,5,Long John Silver
+641,5,Morgan
+642,5,Murderers Secret
+643,5,Posideons Killer
+644,5,Privateers Greed
+645,5,Privateers Howl
+646,5,Red Rackham
+647,5,Sandokan
+648,5,Seas Cruelty
+649,5,Steve The Pirat
+650,5,The Black Pirate
+651,5,The Bloody Fall
+652,5,The Bloody Sadness
+653,5,The Crimson Pirate
+654,5,The Damnation of the Hangman
+655,5,The Dirty Servant
+656,5,The Disgraceful Knave
+657,5,The Dishonor of the North
+658,5,The Fear of the Serpent
+659,5,The Foul Corsair
+660,5,The Horrible Buccaneer of the East
+661,5,The Horrid Slave
+662,5,The Howl of the Manta
+663,5,The Howl of the Wolf
+664,5,The Insanity of Atlantis
+665,5,The Pirates of Dark Water
+666,5,The Pirates of Penzance
+667,5,The Poison Lightning
+668,5,The Rage of the Shark
+669,5,The Sea Captain
+670,5,The Vile Executioner
+671,6,Amulus
+672,6,Amus
+673,6,Bellora
+674,6,Cerpine
+675,6,Certumnus
+676,6,Chariter
+677,6,Cupine
+678,6,Cupithras
+679,6,Cupities
+680,6,Decundus
+681,6,Discorae
+682,6,Discoras
+683,6,Fora
+684,6,Forae
+685,6,Fortuno
+686,6,Furiter
+687,6,Furn
+688,6,Horas
+689,6,Hortuno
+690,6,Horturn
+691,6,Lariter
+692,6,Larities
+693,6,Lucimus
+694,6,Mamillus
+695,6,Mares
+696,6,Merva
+697,6,Mora
+698,6,Moras
+699,6,Mortumnus
+700,6,Nepturn
+701,6,Numercus
+702,6,Numertius
+703,6,Numus
+704,6,Secimus
+705,6,Secius
+706,6,Septius
+707,6,Serius
+708,6,Tercus
+709,6,Tertimus
+710,6,Tibertius
+711,6,Tibervius
+712,6,Viberius
+713,6,Vibertius
+714,5,Comrade Knifeslash
+715,5,Commander of Doom
+716,5,Doomstar
+717,5,Ma'nasta Pir of the Deadly Cannons
+718,5,Jakk Min O Evil
+719,5,You shall die!
+720,5,Master of Surrender
+721,5,Lobskesh Pirate
+722,5,Commander Death
+723,5,Devan Deathwin
+724,5,Mark Masterkill
+725,5,MoNster
+726,5,Thieving Pirate
+727,5,Whan III
+728,5,Pirate Chan
+729,5,Sir Grinder the Sixteenth
+730,5,Emperor of Destruction
+731,5,Hanghim Hyena
+732,5,Evil Genius
+733,5,Simply Evil
+734,5,Simply Wretched
+735,5,The Rat of the Sew'r
+736,5,The Other Rat of the Sew'r
+737,5,Evilling Turtleman Kingo Deadmen Slingknife
+738,5,Hater of Traders
+739,5,Blasting Mastermind of Deathrays

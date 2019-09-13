@@ -1,0 +1,4 @@
+"npc_id","npc_type_id","name","race_id","ship_id","aggression","next_action_time","last_visited_system_id","last_attacked_ship_id","next_travel_time"
+1,1,Good Balancer,,,0,2009-01-01 00:00:00,,,
+2,2,Npc Balancer,,,0,2009-01-01 00:00:00,,,
+3,3,Cleaner NPC,,,0,2009-01-01 00:00:00,,,
