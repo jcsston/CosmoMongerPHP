@@ -5,6 +5,8 @@ namespace Tests\Feature;
 use Tests\TestCase;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
 
 /**
  * This is the base test class for player related tests.
@@ -27,7 +29,7 @@ class BasePlayerTest extends TestCase
         return $this->CreateTestPlayer($baseTestUsername, $baseTestEmail, $baseTestPlayerName, $playerRace);
     }
 
-    private function CreateTestPlayer(string $baseTestUsername, string $baseTestEmail, string $baseTestPlayerName, ?\App\Race $playerRace): \App\Player
+    protected function CreateTestPlayer(string $baseTestUsername, string $baseTestEmail, string $baseTestPlayerName, ?\App\Race $playerRace): \App\Player
     {
         if ($playerRace == null) {
             // Default to Human race
@@ -45,21 +47,46 @@ class BasePlayerTest extends TestCase
         $testUserId = $testUser->getKey();
         $this->assertNotNull($testUserId, "Test User was created.");
 
-        /*
-        // TODO: Implement CreatePlayer function on User model
         return $testUser->CreatePlayer($baseTestUsername, $playerRace);
-        */
-        return new \App\Player;
     }
 
-    private function removeTestPlayers()
+    /**
+     * Was previously Cleanup
+     */
+    protected function removeTestPlayers()
     {
         // Cleanup any possible test players
         $users = \App\User::where([
              ['name', 'like', $this->baseTestUsername . "%"],
              ['email', 'like', "%" . $this->baseTestEmail]
         ]);
+
+        // Remove linked players
+        foreach ($users->get() as $user) {
+            foreach ($user->players as $player) {
+                $ship = $player->ship;
+                if ($ship) {
+                    foreach ($ship->goods as $good) {
+                        Log::debug("Deleting ship_good " . $good->getKey());
+                        $good->delete();
+                    }
+                    Log::debug("Deleting ship " . $ship->getKey());
+                    $ship->delete();
+                }
+                Log::debug("Deleting player " . $player->getKey());
+                $player->delete();
+            }
+        }
+        Log::debug("Deleting users " . $users->count());
         $users->delete();
+
+        // Remove orphaned players
+        DB::table('player')->whereNotExists(function ($query) {
+            $query->select(DB::raw(1))
+                  ->from('users')
+                  ->whereRaw('users.id = player.user_id');
+        })
+        ->delete();
     }
 
     protected function setUp(): void

@@ -1,0 +1,825 @@
+/* Note the urls will be automagicly be resolved by the resource compiler */
+
+/*----------------------------------------------------------
+The base color for this template is #5c87b2. If you'd like
+to use a different color start by replacing all instances of
+#5c87b2 with your new color.
+----------------------------------------------------------*/
+
+body {
+  background-color: black;
+  font-size: 0.75em;
+  font-family: Verdana, Helvetica, Sans-Serif;
+  margin: 0;
+  padding: 0;
+  color: white;
+  background-image: url(/images/Stars.png?169519452d1e01918f5e8454725d2049);
+}
+
+.center {
+  text-align: center;
+}
+
+.columns45 {
+  width: 45%;
+}
+
+a:link {
+  color: #00FF00;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #33CC33;
+}
+
+a:hover {
+  color: #99FF99;
+  text-decoration: none;
+}
+
+a:active {
+  color: #12eb87;
+}
+
+/*
+p, ul
+{
+    margin-bottom: 20px;
+    line-height: 1.6em;
+}
+*/
+
+/* HEADINGS
+----------------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.5em;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+  font-size: 2em;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  text-align: center;
+}
+
+h2 {
+  padding: 0 0 10px 0;
+  text-align: center;
+}
+
+h3 {
+  font-size: 1.2em;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+
+h5,
+h6 {
+  font-size: 1em;
+}
+
+/* this rule styles <h2> tags that are the
+first child of the left and right table columns */
+
+.rightColumn > h1,
+.rightColumn > h2,
+.leftColumn > h1,
+.leftColumn > h2 {
+  margin-top: 0;
+}
+
+/* PRIMARY LAYOUT ELEMENTS
+----------------------------------------------------------*/
+
+.top {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bigTable {
+  width: 100%;
+}
+
+#header {
+  /*
+      position: relative;
+      margin-bottom: 0px;
+      color: white;
+      padding: 0;
+      clear: both;
+  */
+}
+
+#main {
+  padding: 30px 30px 15px 30px;
+  margin-bottom: 30px;
+}
+
+#footer {
+  color: silver;
+  padding: 10px 0;
+  text-align: center;
+  line-height: normal;
+  margin: 0;
+  font-size: 0.9em;
+}
+
+/* MISC
+----------------------------------------------------------*/
+
+.clear {
+  clear: both;
+}
+
+.error {
+  padding: 2px;
+  color: Red;
+}
+
+#title {
+  display: block;
+  float: left;
+  text-align: left;
+}
+
+#logindisplay {
+  font-size: 1.1em;
+  display: block;
+  text-align: right;
+  margin: 10px;
+  color: White;
+}
+
+#logindisplay a:link {
+  color: white;
+  text-decoration: underline;
+}
+
+#logindisplay a:visited {
+  color: white;
+  text-decoration: underline;
+}
+
+.field-validation-error {
+  color: #ff0000;
+}
+
+.input-validation-error {
+  border: 1px solid #ff0000;
+  background-color: #ffeeee;
+}
+
+.validation-summary-errors {
+  font-weight: bold;
+  color: #ff0000;
+}
+
+/* Begin CSS Drop Down Menu
+----------------------------------------------------------*/
+
+#menuh-container {
+  position: absolute;
+}
+
+#menuh {
+  font-size: small;
+}
+
+#menuha {
+  text-align: center;
+  display: block;
+  border: 1px solid #555;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0.3em;
+  color: black;
+  background-color: #aaaaaa;
+  /*<-- Trying to match jQuery UI vader theme silver;*/
+  text-decoration: none;
+}
+
+#menuh a {
+  text-align: center;
+  display: block;
+  border: 1px solid #555;
+  white-space: nowrap;
+  margin: 0;
+  padding: 0.3em;
+}
+
+#menuh a:link,
+#menuh a:visited,
+#menuh a:active {
+  color: black;
+  background-color: #aaaaaa;
+  /*<-- Trying to match jQuery UI vader theme silver;*/
+  text-decoration: none;
+}
+
+#menuh a:hover {
+  color: white;
+  background-color: blue;
+  text-decoration: none;
+}
+
+#menuh a.top_parent,
+#menuh a.top_parent:hover {
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+#menuh a.parent,
+#menuh a.parent:hover {
+  background-position: right center;
+  background-repeat: no-repeat;
+}
+
+#menuh ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  float: left;
+  width: 10em;
+  /* width of all menu boxes */
+}
+
+#menuh li {
+  position: relative;
+  min-height: 1px;
+  /* Sophie Dennis contribution for IE7 */
+  vertical-align: bottom;
+  /* Sophie Dennis contribution for IE7 */
+}
+
+#menuh ul ul {
+  position: absolute;
+  z-index: 500;
+  top: auto;
+  display: none;
+  padding: 1em;
+  margin: -1em 0 0 -1em;
+}
+
+#menuh ul ul ul {
+  top: 0;
+  left: 100%;
+}
+
+div#menuh li:hover {
+  cursor: pointer;
+  z-index: 100;
+}
+
+div#menuh li:hover ul ul,
+div#menuh li li:hover ul ul,
+div#menuh li li li:hover ul ul,
+div#menuh li li li li:hover ul ul {
+  display: none;
+}
+
+div#menuh li:hover ul,
+div#menuh li li:hover ul,
+div#menuh li li li:hover ul,
+div#menuh li li li li:hover ul {
+  display: block;
+}
+
+/* End CSS Drop Down Menu */
+
+/* Travel View CSS */
+
+.galaxy-map {
+  position: relative;
+  width: 400px;
+  height: 400px;
+  border: solid 2px blue;
+  overflow: hidden;
+  padding: 15px;
+  z-index: 0;
+}
+
+table.travel td {
+  vertical-align: top;
+}
+
+.shipRange {
+  position: absolute;
+  z-index: -1;
+}
+
+.system-border {
+  border: solid 2px;
+}
+
+.system-current {
+  color: red;
+}
+
+.system-inrange {
+  color: blue;
+}
+
+.system-outofrange {
+  border: none;
+}
+
+.system-info {
+  padding: 4px;
+  display: none;
+}
+
+/* Starfield CSS */
+
+#starField {
+  margin-left: auto;
+  margin-right: auto;
+  background: black;
+  width: 600px;
+  height: 400px;
+  border: solid thin blue;
+  position: relative;
+}
+
+.star {
+  padding: 0px;
+  margin: 0px;
+  color: white;
+  font: bold 13px Arial, sans-serif;
+  position: absolute;
+}
+
+/* Home Page */
+
+.logo {
+  display: inline;
+  float: left;
+  padding: 10px;
+}
+
+/* PlayerProfile CSS */
+
+.vp-playerName {
+  font-size: 2em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vp-headers {
+  font-size: 1.5em;
+  text-align: center;
+  width: 32%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vp-columnData {
+  font-size: 1em;
+  text-align: center;
+  width: 16%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* CreatePlayer CSS */
+
+div.race {
+  display: none;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cp-table {
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cp-racialMods {
+  font-size: 1em;
+  width: 20%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cp-rightHeaders {
+  font-size: 1em;
+  width: 15%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cp-rightData {
+  font-size: 1em;
+  width: 15%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cp-leftData {
+  font-size: 1em;
+  width: 20%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cp-leftHeaders {
+  font-size: 1em;
+  width: 10%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.cp-topLines {
+  text-align: center;
+  font-size: 1.5em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* UserProfile CSS */
+
+.up-links {
+  font-size: 1em;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* View Records CSS */
+
+.vr-playerName {
+  font-size: 2em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vr-highBounty {
+  font-size: 1em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vr-columns {
+  font-size: 1em;
+  width: 33%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vr-columnHeaders {
+  font-size: 1.5em;
+  text-decoration: underline;
+  width: 33%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.vr-columnMiddle {
+  font-size: 1em;
+  width: 5%;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ListGoods View CSS */
+
+h1.goods,
+h2.goods {
+  text-align: center;
+}
+
+img.systemImg {
+  margin-right: 20px;
+}
+
+table.goods {
+  border-spacing: 5px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+table.goods th {
+  border-bottom: solid thin;
+}
+
+/* The follow style applies to all table cells in a good class table */
+
+table.goods td {
+  text-align: left;
+}
+
+/* The following style applies to the second and following cells in a good class table */
+
+table.goods td + td {
+  text-align: center;
+}
+
+/* This style overrides the default text-align: left for the goods table */
+
+table.goodsCenter td {
+  text-align: center;
+}
+
+.priceTableCurrentSystem {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: larger;
+}
+
+.priceTableCurrentSystem td {
+  font-weight: bold;
+  text-decoration: underline;
+  font-size: larger;
+}
+
+.priceTableLow {
+  color: blue;
+}
+
+.priceTableHigh {
+  color: red;
+}
+
+/* ListRecords View */
+
+table.topRecords {
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 1em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table.topRecords thead {
+  font-size: 1.4em;
+  padding: 1em;
+  text-decoration: underline;
+}
+
+/* Bank View */
+
+.bank-columnEmpty {
+  width: 20%;
+}
+
+.bank-columnHeaders {
+  font-size: 1.5em;
+  padding: 1em;
+  width: 30%;
+  text-decoration: underline;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.bank-data {
+  font-size: 1em;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* ViewShip View CSS */
+
+table.equipment {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+table.equipment table {
+  display: inline;
+  margin: 5px;
+  border-spacing: 3px;
+}
+
+table.equipment caption {
+  font-weight: bold;
+  border-bottom: solid thin;
+}
+
+.shipImage {
+  vertical-align: middle;
+}
+
+/* BuddyList CSS */
+
+table.grid {
+  border-spacing: 5px;
+}
+
+table.grid th {
+  border-bottom: solid thin;
+}
+
+/* Combat CSS */
+
+table.combat {
+  width: 100%;
+  text-align: center;
+}
+
+div.combatBar {
+  border: solid thin blue;
+  width: 75px;
+  height: 175px;
+}
+
+div.combatHull {
+  background-color: blue;
+}
+
+div.combatShield {
+  background-color: green;
+}
+
+div.combatBar div {
+  width: 100%;
+  height: 0%;
+  background-color: black;
+}
+
+p.legend {
+  text-decoration: underline;
+}
+
+/* jGrowl CSS */
+
+div.jGrowl {
+  padding: 10px;
+  z-index: 9999;
+}
+
+/** Normal Style Positions **/
+
+body > div.jGrowl {
+  position: fixed;
+}
+
+body > div.jGrowl.top-left {
+  left: 0px;
+  top: 0px;
+}
+
+body > div.jGrowl.top-right {
+  right: 0px;
+  top: 0px;
+}
+
+body > div.jGrowl.bottom-left {
+  left: 0px;
+  bottom: 0px;
+}
+
+body > div.jGrowl.bottom-right {
+  right: 0px;
+  bottom: 0px;
+}
+
+body > div.jGrowl.center {
+  top: 0px;
+  width: 50%;
+  left: 25%;
+}
+
+/** Cross Browser Styling **/
+
+div.center div.jGrowl-notification,
+div.center div.jGrowl-closer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+div.jGrowl div.jGrowl-notification,
+div.jGrowl div.jGrowl-closer {
+  background-color: #000;
+  color: #fff;
+  opacity: 0.85;
+  filter: alpha(opacity=85);
+  zoom: 1;
+  width: 235px;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  font-size: 12px;
+  text-align: left;
+  display: none;
+  border-radius: 5px;
+}
+
+div.jGrowl div.jGrowl-notification {
+  min-height: 40px;
+}
+
+div.jGrowl div.jGrowl-notification div.header {
+  font-weight: bold;
+  font-size: 10px;
+}
+
+div.jGrowl div.jGrowl-notification div.close {
+  float: right;
+  font-weight: bold;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+div.jGrowl div.jGrowl-closer {
+  height: 15px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  cursor: pointer;
+  font-size: 11px;
+  font-weight: bold;
+  text-align: center;
+}
+
+/* Tooltip CSS */
+
+#tooltip {
+  position: absolute;
+  z-index: 3000;
+  border: 1px solid #111;
+  background-color: #eee;
+  padding: 5px;
+}
+
+#tooltip h3,
+#tooltip div {
+  margin: 0;
+}
+
+#tooltip.good-tooltip {
+  border: none;
+  background-color: transparent;
+}
+
+/* liScroll style declarations */
+
+.tickercontainer {
+  /* the outer div with the black border */
+  border: 1px solid white;
+  background: black;
+  width: 738px;
+  height: 27px;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+.tickercontainer .mask {
+  /* that serves as a mask. so you get a sort of padding both left and right */
+  position: relative;
+  left: 10px;
+  top: 8px;
+  width: 718px;
+  overflow: hidden;
+}
+
+ul.newsticker {
+  /* that's your list */
+  position: relative;
+  left: 750px;
+  font: bold 10px Verdana;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+ul.newsticker li {
+  float: left;
+  /* important: display inline gives incorrect results when you check for elem's width */
+  margin: 0;
+  padding: 0;
+  /*background: #fff;*/
+}
+
+ul.newsticker a {
+  white-space: nowrap;
+  padding: 0;
+  /*color: #ff0000;*/
+  font: bold 10px Verdana;
+  margin: 0 50px 0 0;
+}
+
+ul.newsticker span {
+  margin: 0 10px 0 0;
+}
+
+/* Dead Player CSS */
+
+.deadPlayer {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Communcation CSS */
+
+.message {
+  border-width: 1px;
+  padding: 2px;
+  width: 100%;
+}
+
+.messageBody {
+  font-size: 1.5em;
+}
+

@@ -10,58 +10,8 @@
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
 
         <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Nunito', sans-serif;
-                font-weight: 200;
-                height: 100vh;
-                margin: 0;
-            }
+        <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 13px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
     </head>
     <body>
         <div class="flex-center position-ref full-height">
@@ -80,19 +30,26 @@
             @endif
 
             <div class="content">
-                <div class="title m-b-md">
-                    Laravel
-                </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Docs</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://blog.laravel.com">Blog</a>
-                    <a href="https://nova.laravel.com">Nova</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
-                </div>
+            <h2><img id="logo" class="logo" alt="CosmoMonger Logo" src="{{ asset('images/Logo.png') }}" />Welcome to CosmoMonger</h2>
+            <p>
+                CosmoMonger is an on-line space-based trading game featuring real-time
+                multi-player interaction.&nbsp; Players own a starship which they use to visit
+                planetary systems.&nbsp; Once in a system, players can buy and sell commodities
+                (both legal and illegal) to earn credits.&nbsp; Gaining credits allows players
+                to buy bigger and more powerful ships.&nbsp; But danger exists side-by-side with
+                free enterprise!&nbsp; The Galactic Police are sworn to stop the influx of
+                contraband, by any means necessary!&nbsp; Vicious pirates seek to part honest
+                merchants from their wares! And most dangerous of all...other players seek fame
+                and profit by attacking their competitors!
+            </p>
+            <p>
+                All this for the low, low price of......absolutely nothing!&nbsp; CosmoMonger is
+                free to play and worth every darn penny!&nbsp;
+            </p>
+            <p>
+                The path to fame and fortune awaits YOU!&nbsp; Register today and start down the
+                path to achieving galatic domination....
+            </p>
             </div>
         </div>
     </body>
